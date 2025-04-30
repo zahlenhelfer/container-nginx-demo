@@ -1,4 +1,4 @@
 # container-nginx-demo
-[![Build Status](https://github.com/zahlenhelfer/container-nginx-demo/workflows/publish/badge.svg)](https://github.com/zahlenhelfer/container-nginx-demo/actions)
+[![Docker Build & Sign](https://github.com/zahlenhelfer/container-nginx-demo/actions/workflows/build-sign-image.yaml/badge.svg)](https://github.com/zahlenhelfer/container-nginx-demo/actions/workflows/build-sign-image.yaml)
 
 NGINX demo container showing how to use GitHub Container Registry
