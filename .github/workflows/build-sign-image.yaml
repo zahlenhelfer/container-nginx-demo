@@ -39,7 +39,7 @@ jobs:
           labels: |
             org.opencontainers.image.title="GitHubActionHelmDepUpdate"
             org.opencontainers.image.vendor="https://github.com/zahlenhelfer"
-            org.label-schema.url="https://github.com/"${{ github.repository }}
+            org.label-schema.url="https://github.com/${{ github.repository }}"
             org.label-schema.schema-version="1.0"
           tags: |
             type=schedule
