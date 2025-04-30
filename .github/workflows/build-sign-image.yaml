@@ -38,8 +38,8 @@ jobs:
             ghcr.io/${{ github.repository }}
           labels: |
             org.opencontainers.image.title="GitHubActionHelmDepUpdate"
-            org.opencontainers.image.vendor="https://github.com/zahlenhelfer"
-            org.label-schema.url="https://github.com/${{ github.repository }}"
+            org.opencontainers.image.vendor=${{ github.server_url }}/${{ github.repository }}
+            org.label-schema.url=${{ github.server_url }}/${{ github.repository }}
             org.label-schema.schema-version="1.0"
           tags: |
             type=schedule
@@ -52,7 +52,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           platforms: |
-            linux/amd64, linux/arm64
+            linux/amd64, linux/arm64, darwin/amd64, darwin/arm64
           context: .
           file: ./Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
@@ -74,4 +74,4 @@ jobs:
         run: |
           cosign verify ghcr.io/{{ github.repository }} \
             --certificate-identity https://github.com/${{ github.repository }}/.github/workflows/main.yml@refs/heads/main \
-            --certificate-oidc-issuer https://token.actions.githubusercontent.com | jq         
+            --certificate-oidc-issuer https://token.actions.githubusercontent.com | jq
